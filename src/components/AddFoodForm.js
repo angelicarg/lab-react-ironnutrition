@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import 'antd/dist/antd.min.css';
+import { Row, Divider, Button, Input } from 'antd';
 
 function AddFoodForm({ allFoods, setAllFoods }) {
   const [form, setForm] = useState({
     name: '',
-    image: '',
     calories: '',
+    image: '',
     servings: '',
   });
 
@@ -20,8 +20,8 @@ function AddFoodForm({ allFoods, setAllFoods }) {
 
     setForm({
       name: '',
-      image: '',
       calories: '',
+      image: '',
       servings: '',
     });
   }
@@ -31,18 +31,38 @@ function AddFoodForm({ allFoods, setAllFoods }) {
       <Divider>Add Food Entry</Divider>
 
       <label>Name</label>
-      <Input value={undefined} type="text" onChange={(handleChange) => {}} />
-
-      <label>Image</label>
-      <Input value={undefined} type="image" onChange={(handleChange) => {}} />
-      {/* render antd <Input /> type="text" here */}
+      <Input
+        value={form.name}
+        type="text"
+        name="name"
+        onChange={(handleChange) => {}}
+      />
 
       <label>Calories</label>
-      <Input value={undefined} type="number" onChange={(handleChange) => {}} />
+      <Input
+        value={form.calories}
+        type="number"
+        name="calories"
+        onChange={(handleChange) => {}}
+      />
       {/* render antd <Input /> type="number" here */}
 
+      <label>Image</label>
+      <Input
+        value={form.image}
+        type="text"
+        name="image"
+        onChange={(handleChange) => {}}
+      />
+      {/* render antd <Input /> type="text" here */}
+
       <label>Servings</label>
-      <Input value={undefined} type="number" onChange={(handleChange) => {}} />
+      <Input
+        value={form.servings}
+        type="number"
+        name="servings"
+        onChange={(handleChange) => {}}
+      />
       {/* render antd <Input /> type="number" here */}
 
       <button type="submit" onClick={handleSubmit}>
